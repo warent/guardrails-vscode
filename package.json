@@ -10,16 +10,25 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "rail",
-      "aliases": ["RAIL", "rail"],
-      "extensions": [".rail"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "rail",
-      "scopeName": "source.rail",
-      "path": "./syntaxes/rail.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "rail",
+        "aliases": [
+          "RAIL",
+          "rail"
+        ],
+        "extensions": [
+          ".rail"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "rail",
+        "scopeName": "source.rail",
+        "path": "./syntaxes/rail.tmLanguage.json"
+      }
+    ]
   }
 }

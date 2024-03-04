@@ -3,29 +3,46 @@
   "name": "RAIL",
   "patterns": [
     {
-      "include": "#keywords"
+      "include": "#variables"
     },
     {
-      "include": "#strings"
+      "begin": "(</?)(rail|output|instruction|prompt)(?<!/)",
+      "beginCaptures": {
+        "1": {
+          "name": "punctuation.definition.tag.begin.rail"
+        },
+        "2": {
+          "name": "entity.name.tag.$2.rail"
+        }
+      },
+      "end": "((?: ?/)?>)",
+      "endCaptures": {
+        "1": {
+          "name": "punctuation.definition.tag.end.rail"
+        }
+      },
+      "name": "meta.tag.other.rail",
+      "patterns": [
+        {
+          "include": "text.html.basic#attribute"
+        }
+      ]
     }
   ],
   "repository": {
-    "keywords": {
+    "variables": {
       "patterns": [
         {
-          "name": "keyword.control.rail",
-          "match": "\\b(if|while|for|return)\\b"
-        }
-      ]
-    },
-    "strings": {
-      "name": "string.quoted.double.rail",
-      "begin": "\"",
-      "end": "\"",
-      "patterns": [
+          "name": "variable.language.output_schema",
+          "match": "\\$\\{output_schema}"
+        },
         {
-          "name": "constant.character.escape.rail",
-          "match": "\\\\."
+          "name": "variable.language.prompt_primitive",
+          "match": "\\$\\{gr\\.(json_suffix_prompt|xml_prefix_prompt|json_suffix_prompt_v2|json_suffix_prompt_v2_wo_none|high_level_json_reask_prompt|high_level_skeleton_reask_prompt|high_level_json_parsing_reask_prompt|json_suffix_without_examples|json_suffix_with_structure_example|complete_json_suffix|complete_json_suffix_v2|complete_json_suffix_v3|json_suffix_prompt_examples|high_level_string_reask_prompt|complete_string_suffix|high_level_json_instructions)\\}"
+        },
+        {
+          "name": "variable.other.user_defined.rail",
+          "match": "\\$\\{\\w+\\}"
         }
       ]
     }
