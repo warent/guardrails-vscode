@@ -1,0 +1,25 @@
+{
+  "name": "guardrails",
+  "displayName": "Guardrails",
+  "description": "Support for RAIL files and Guardrails tools",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "rail",
+      "aliases": ["RAIL", "rail"],
+      "extensions": [".rail"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "rail",
+      "scopeName": "source.rail",
+      "path": "./syntaxes/rail.tmLanguage.json"
+    }]
+  }
+}
