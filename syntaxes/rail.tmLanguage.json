@@ -3,6 +3,9 @@
   "name": "RAIL",
   "patterns": [
     {
+      "include": "text.html.basic#comment"
+    },
+    {
       "include": "#variables"
     },
     {
@@ -33,16 +36,27 @@
     "variables": {
       "patterns": [
         {
-          "name": "variable.language.output_schema",
-          "match": "\\$\\{output_schema}"
-        },
-        {
-          "name": "variable.language.prompt_primitive",
-          "match": "\\$\\{gr\\.(json_suffix_prompt|xml_prefix_prompt|json_suffix_prompt_v2|json_suffix_prompt_v2_wo_none|high_level_json_reask_prompt|high_level_skeleton_reask_prompt|high_level_json_parsing_reask_prompt|json_suffix_without_examples|json_suffix_with_structure_example|complete_json_suffix|complete_json_suffix_v2|complete_json_suffix_v3|json_suffix_prompt_examples|high_level_string_reask_prompt|complete_string_suffix|high_level_json_instructions)\\}"
-        },
-        {
-          "name": "variable.other.user_defined.rail",
-          "match": "\\$\\{\\w+\\}"
+          "name": "string.interpolated.rail",
+          "begin": "\\$\\{([\\w|\\.]+)",
+          "end": "\\}",
+          "beginCaptures": {
+            "1": {
+              "patterns": [
+                {
+                  "name": "variable.language.prompt_primitive.rail",
+                  "match": "gr\\.(json_suffix_prompt|xml_prefix_prompt|json_suffix_prompt_v2|json_suffix_prompt_v2_wo_none|high_level_json_reask_prompt|high_level_skeleton_reask_prompt|high_level_json_parsing_reask_prompt|json_suffix_without_examples|json_suffix_with_structure_example|complete_json_suffix|complete_json_suffix_v2|complete_json_suffix_v3|json_suffix_prompt_examples|high_level_string_reask_prompt|complete_string_suffix|high_level_json_instructions)"
+                },
+                {
+                  "name": "variable.language.output_schema.rail",
+                  "match": "output_schema"
+                },
+                {
+                  "name": "string.interpolated.user_defined.rail",
+                  "match": "\\w+"
+                }
+              ]
+            }
+          }
         }
       ]
     }
