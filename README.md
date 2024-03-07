@@ -1,5 +1,7 @@
 # guardrails-vscode README
 
+[Screencast from 03-06-2024 07:42:04 PM.webm](https://github.com/warent/guardrails-vscode/assets/13342266/2b482da1-9e90-41e3-bfcd-702848310f8a)
+
 ![Screenshot from 2024-03-03 20-26-19](https://github.com/warent/guardrails-vscode/assets/13342266/487129d3-0da5-4083-8128-7dd713b570d9)
 
 This is the README for your extension "guardrails". After writing up a brief description, we recommend including the following sections.
