@@ -1,0 +1,16 @@
+{
+  "name": "guardrails-ai-language-server-client",
+  "description": "Client for the Guardrails AI Language Server",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.25",
+    "@types/vscode": "^1.75.1",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}
