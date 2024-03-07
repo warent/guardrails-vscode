@@ -107,7 +107,7 @@ connection.onCompletion(
       }) ?? "";
 
     let isInVariable = false;
-    for (let i = 0; i < line.length; i++) {
+    for (let i = line.length - 1; i > 0; i--) {
       if (line[i] == "{" && line[i - 1] == "$") {
         isInVariable = true;
         break;
